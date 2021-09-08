@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{{user_sesskey}}
+{% for d in show_details %}
+
+    <table>
+        <tr><td>{{d.category}}</td></tr>
+        <tr><td>{{d.sub_category}}</td></tr>
+        <tr><td><img src="{{d.file_upload}}"></td></tr>
+        <tr><td>{{d.location}}</td></tr>
+    </table>
+{% endfor %}
+</body>
+</html>

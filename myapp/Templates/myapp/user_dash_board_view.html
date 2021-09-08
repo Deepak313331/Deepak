@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<link rel="stylesheet" type="text/css" href="/static/css/user_css.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"><img src="/static/image/logo7.png" style="margin-top:7px;float: left;height:130px;"></a>
+    </div>
+    <ul class="navb">
+	  <li><a href="home" style="">Home</a></li>
+	  <li><a href="aboutus">About Us</a></li>
+	  <li><a href="contact">Contact Us</a></li>
+	  <li><a href="user_logout">Logout</a></li>
+	</ul>
+</nav>
+	<center><h1></h1></center>
+	<form action="search_property" method="post">
+		{% csrf_token %}
+		<table >
+
+			<tbody class="tab">
+				<tr><th><a href="user_dashboard"><i class="fas fa-home" style="color:#6666ff;" title="Home"></i><br></a></th></tr>
+				<tr><th></th></tr>
+				<tr><th><a href="user_logout"><i class="fas fa-sign-out-alt" style="color:#6666ff;" title="Sign-Out"></i><br></a></th></tr>
+			</tbody>
+		</table>
+		<div class="container">
+
+			<!--<div><img src="{{data.file_upload}}" width="550px" height="430px" style="margin-left: 15px; margin-top: 10px;"></div>
+			<i class="fa fa-bath" aria-hidden="true">{{data.category}}</i>
+			<i class="fa fa-bed" aria-hidden="true">{{data.sub_category}}</i>
+			<i class="fa fa-location-arrow" aria-hidden="true">{{data.location}}</i>
+			<i class="fa fa-inr" aria-hidden="true">{{data.room_price}}</i>-->
+			<table>
+			{% for data in show_details %}
+				<div><img src="{{data.file_upload}}" width="550px" height="430px" style="margin-left: 15px; margin-top: 10px;"></div>
+				<i class="fa fa-bed" aria-hidden="true">&emsp;{{data.description}}</i>
+				<i class="fa fa-bath" aria-hidden="true">&emsp;{{data.sub_category}}</i>
+				<i class="fa fa-location-arrow" aria-hidden="true">&emsp;{{data.location}}</i>
+				<i class="fa fa-inr" aria-hidden="true">{{data.room_price}}</i>
+
+			{% endfor %}
+			</table>
+			<i class="fa fa-handshake-o" aria-hidden="true"><a href="" style="text-decoration: none;font-family: monospace; font-size: 17px;margin:10px 0 0 0;">BOOK NOW</a></i>
+
+		</div>
+</form>
+</body>
+</html>

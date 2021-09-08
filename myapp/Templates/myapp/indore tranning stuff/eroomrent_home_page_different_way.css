@@ -1,0 +1,63 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+
+}
+body{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+}
+.container{
+	position: relative;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-wrap: wrap;
+	width: 100px;
+	border-radius: 30px;
+}
+.container .card{
+	width: 30px;
+	margin: 20px;
+	padding: 40px 30px;
+	box-shadow: -20px -20px 20px rgba(255,255,255,1),22px 22px 20px rgba(0,0,0,0.1);
+	background: #fff2e6;
+
+}
+.container .card:hover {
+	box-shadow: inset -6px -6px 10px rgba(255,255,255,0.5),inset 6px 6px 20px rgba(0,0,0,0.05);	
+
+}
+.container .card .imgBx{
+	position: relative;
+	text-align: center;
+
+}
+.container .card .imgBx img{
+	max-width: 120px;
+	margin-right: : 70px;
+
+
+}
+.container .card .contentbox{
+
+	position: relative;
+	margin-top: 20px;
+	text-align: center;
+}
+.container .card .contentbox a{
+	color: #32a3b1;
+	font-weight: 300;
+	font-size: 1em;
+	letter-spacing: 2px;
+	text-align: center;
+	display: inline-block;
+	padding: 10px 20px;
+}
+.container .card .contentbox p{
+	color: #000;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/static/css/owner_add_room_css.css">
+	<link rel="stylesheet" type="text/css" href="/static/animate.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+	<!--<script type="text/javascript">
+		function click() {
+			// body...
+
+		}
+	</script>
+	<script>
+	function loadDoc() {
+	  var xhttp = new XMLHttpRequest();
+	  xhttp.onreadystatechange = function() {
+	    if (this.readyState == 4 && this.status == 200) {
+	      document.getElementById("demo").innerHTML = this.responseText;
+	    }
+  };
+  xhttp.open("GET", "ajax_info.txt", true);
+  xhttp.send();
+}
+</script>-->
+
+</head>
+<body>
+
+	<div class="animated" id="ani">
+	<div class="owner_main">
+		<a href="home"><img src="/static/image/logo7.png" width="100px;"></a><h1>WELCOME {{sesskey}} TO OWNER's DASHBOARD</h1>
+	</div>
+	<div class="container">
+		<a href="ownerD"><button class="btn"><i class="fas fa-home" aria-hidden="true">&nbsp;Home</i></button></a><br>
+		<a href="owner_add_room"><button class="btn" ><i class="fa fa-plus-circle" aria-hidden="true">&nbsp;Add Room</i></button></a><br>
+		<a href="owner_view_room"><button class="btn"><i class="fa fa-eye" aria-hidden="true">&nbsp;View Room</i></button></a><br>
+		<a href="view_booking_owner"><button class="btn"><i class="fa fa-book" aria-hidden="true">&nbsp;View Booking</i></button></a><br>
+		<a href="owner_logout"><button class="btn"><i class="fas fa-sign-out-alt"></i>&nbsp;LogOut</button></a>
+</div>
+</div>
+</body>
+</html>

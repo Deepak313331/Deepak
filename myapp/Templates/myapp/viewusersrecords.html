@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+       <center> <table border="1">
+
+        <tr><th>User_ID(PK)</th><th>User_Name</th><th>User_Email</th><th>User_Phone_no.</th><th>User_Password</th><th>User_Address</th><th>User_Gender</th><th>User_Wants</th></tr>
+
+        {% for items in res %}
+        <tr><td>{{items.id}}</td><td>{{items.nname}}</td><td>{{items.eemail}}</td><td>{{items.eephone}}</td><td>{{items.epas}}</td><td>{{items.eadd}}</td><td>{{items.egen}}</td><td>{{items.elook}}</td></tr>
+        {% endfor %}
+       </table></center>
+</body>
+</html>

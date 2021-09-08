@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+       <center> <table border="1">
+
+           <tr><th>OWNER_ID(PK)</th><th>OWNER_Name</th><th>OWNER_Email</th><th>OWNER_PASSWORD</th><th>OWNER_PHONE</th></tr>
+
+        {% for items in res1 %}
+        <tr><td>{{items.id}}</td><td>{{items.fullname}}</td><td>{{items.email}}</td><td>{{items.password}}</td><td>{{items.phone}}</td></tr>
+        {% endfor %}
+       </table></center>
+</body>
+</html>

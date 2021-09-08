@@ -1,0 +1,18 @@
+body{
+	margin: 0;
+	padding: 0;
+	color: #f2f2f2;
+}
+
+h1{
+	color: mediumseagreen;
+}
+
+footer{
+	width: 1200px;
+	color: #000;
+}
+.foot{
+	color: tomato;
+	width: 1200px;
+}

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/static/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/bootstrap/css/bootstrap.min.js">
+	<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+	<link rel="shortcut icon"  type="image/png" href="/static/image/logo3.png">
+	<link rel="stylesheet" type="text/css" href="/static/animate.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--<link rel="stylesheet" type="text/css" href="css/font-awesome.css" />-->
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+	<script type="text/javascript">
+		function clickk(){
+			window.alert("THANK-YOU!!!......SOON YOU WILL GET NEW UPDATES :)");
+		}
+
+		function showsubcat(a)
+		{
+
+		xmlhttp = new XMLHttpRequest();
+    	xmlhttp.onreadystatechange=function()
+    	{
+          document.getElementById("result").innerHTML = xmlhttp.responseText;
+    	}
+    	xmlhttp.open("GET","subcat?q="+a,true);
+    	xmlhttp.send();
+		}
+		function myFunction() {
+		  document.getElementById("subbb").disabled = true;
+		}
+	</script>
+</head>
+<body id="animated fadeIn">
+
+	<nav class="navbar navbar-expand-lg" style="background:  #e6e6e6;">
+	<div class="container">
+
+	<div class="container-fluid">
+		<div class="navbar-header" >
+
+
+		</div>
+		<div class="collapse navbar-collapse">
+
+		<ul class="nav navbar-nav" style=" margin: 30px;position: relative; font-size: 15px;">
+		{% if user_sesskey == None %}
+			<a class="navbar-brand" href="home">
+				<img class="image-fluid" id="fix" src="/static/image/logo7.png" style="padding:15px;width: 140px; margin:-100px; margin-left: -250px; margin-top: -65px;">
+			</a>
+			<li class="active"><a href="home" style="font-family: monospace; color: #ff6666;font-stretch: ultra-condensed;margin-left:-70px;">Home</a></li>
+			<li class="active"><a href="aboutus"  style="font-family: monospace; color: #ff6666;">About</a></li>
+			<li class="active"><a href="owner"  style="font-family: monospace; color: #ff6666;">Property-Owner</a></li>
+			<!-- <li class="active1"><a href="#"  style="font-family: monospace; color: #ff6666;">Location</a></li> -->
+			<li class="active"><a href="contact"  style="font-family: monospace; color: #ff6666;">ContactUs</a></li>
+			<div class="dropdown1">
+				  <button class="dropbtn" style="font-family: monospace;">Location</button>
+				  <div class="dropdown-content">
+				    <a href="home"style="font-family: monospace;color: #ff6666;font-size: 15px;">Indore</a>
+				    <a href="#"style="font-family: monospace;color: #ff6666;font-size: 15px;">More Cities(Coming Soon)</a>
+				  </div>
+			</div>
+			<div class="dropdown">
+				  <button class="dropbtn" style="font-family: monospace;" value="{{res}}">NEW USER</button>
+				  <div class="dropdown-content">
+				    <a href="lf" style="font-family: monospace;color: #ff6666;font-size: 15px;">Login</a>
+				    <a href="sf" style="font-family: monospace;color: #ff6666;font-size: 15px;">Sign-Up</a>
+				  </div>
+			</div>
+		{% else %}
+			<a class="navbar-brand" href="home">
+				<img class="image-fluid" id="fix" src="/static/image/logo7.png" style="padding:15px;width: 140px; margin:-100px; margin-left: -80px; margin-top: -65px;">
+			</a>
+			<li class="active"><a href="home" style="margin-left:100px;font-family: monospace; color: #ff6666;text-transform: capitalize;" class="capitalize">Home</a></li>
+			<li class="active"><a href="aboutus"  style="font-family: monospace; color: #ff6666;">About</a></li>
+			<li class="active"><a href="contact"  style="font-family: monospace; color: #ff6666;">ContactUs</a></li>
+			<li style="margin-left:40px;margin-top:8px;font-size:30px;font-family:Gabriola;color: #6666ff;">Welcome, {{user_sesskey}}</li>
+			<li class="active"><a href="user_logout"  style="font-size:15px;margin-left:650px;font-family: monospace; color: #ff6666;margin-top:-50px;">Logout</a></li>
+		{% endif %}
+		</ul>
+	</div>
+</div>
+</div>
+</nav>
+ <section class="main-header">
+		<div class="container">
+			<div class="row">
+				<div class="col-12 col-lg-7 m-auto">
+					<div class="header-content text-left">
+						<h1 class="title" style="color: #41485a; font-family: monospace;">Find Room|Flats|Hostel|PG<br>in easiest way</h1>
+					 <br>
+					 <br>
+					 <form style="margin-bottom: 200px" action="search_property" method="post">
+						 {% csrf_token %}
+						 <div class="row">
+								<div class="tee">
+									<div class="col-12 col-sm-6">
+										<div class="input-group1" style=""id="TS">
+											<input type="text" class="form-control" placeholder="" name="txtkey" style="width: 150px;background:#fff;color:#6666ff;font-size:16px;font-family:monospace;" disabled value="Fill the Fields....">
+											<div class="input-group-append">
+												<span class="input-group-text"></span>
+											</div>
+										</div>
+									</div>
+									<div class="col-12 col-sm-6">
+										<div class="input-group2" id="TS2">
+											<select onchange="showsubcat(this.value)" class="form-control" style="width: 150px;" name="cat_name">
+												<option value="0">Select Category</option>
+													<option value="1">Room</option>
+													<option value="2">Flat</option>
+													<option value="3">Hostel</option>
+													<option value="4">PG</option>
+											</select>
+
+										</div>
+									</div>
+									<div class="col-12 col-sm-6">
+										<div class="input-group3" id="result">
+										<select class="form-control" style="width: 150px;" name="sub_cat">
+											<option value="0">Sub Category</option>
+											{% for s in cat_res %}
+												 <option value="{{s.sub_cat_id}}">{{s.sub_cat_name}</option>
+											{% endfor %}
+
+										</select>
+										</div>
+									</div>
+									<div class="col-12 col-sm-6">
+										<div class="input-group4"id="TS4">
+											<select class="form-control" name="loc" style="width: 150px;">
+												<option value="">Select Location</option>
+
+												<option value="Palasia">Palasia</option>
+												<option value="Bhawarkua Vishnupuri">Bhawarkua Vishnupuri</option>
+												<option value="Bhawarkua Tower Chouraha">Bhawarkua Tower Chouraha</option>
+												<option value="Bhawarkua Gyanji Ka Dhaba">Bhawarkua Gyanji Ka Dhaba</option>
+												<option value="Bhawarkua Bholaram Gate">Bhawarkua Bholaram Gate</option>
+												<option value="Palasia Saket Square">Palasia Saket Square</option>
+												<option value="Tilak Nagar Main Road">Tilak Nagar Main Road</option>
+												<option value="M R 9, Hera Nagar Main Road">M R 9, Hera Nagar Main Road</option>
+												<option value="Napania">Napania</option>
+												<option value="Manish Baug Colony">Manish Baug Colony</option>
+												<option value="Rau Ram Rahim Colony">Rau Ram Rahim Colony</option>
+												<option value="VijayNagar SCHEME NO. 54">VijayNagar SCHEME NO. 54</option>
+												<option value="Vijay Nagar">Vijay Nagar</option>
+												<option value="Vijay Nagar Scheme No  171">Vijay Nagar Scheme No  171</option>
+												<option value="GPO Parsi mohalla">GPO Parsi mohalla</option>
+
+											</select>
+										</div>
+									</div>
+								{% if user_sesskey != None %}
+										<div class="subbbb">
+											<button type="submit" id="subbb" name="btnsub">Search Property</button>
+										</div>
+								{% else %}
+										<div class="subbbb">
+											<button type="submit" id="subbb"  name="btnsub"><a href="lf" class="link" style="color:#; text-decoration:none;font-family:monospace;">Search Property</a></button>
+										</div>
+								{% endif %}
+								</div>
+
+						</form>
+						<div class="qoute"><h2 style="font-size: 25px; font-family: Comic Sans MS; color: #6666ff; animation-delay: 1s; animation-duration: 3s;" class="animated fadeIn" id="qo">"FIND A PLACE FOR YOUR HAPPINESS &#128519"</h2></div>
+						</div>
+				</div>
+			</div>
+				<div class="col-12 col-lg-5 d-none d-lg-block">
+					<div class="image"><a href="al" class="animated fa-linkedin" id="aniii" style="text-decoration: none;">
+						<img class="img-fluid" src="/static/image/tourist12.png" alt="tourist" style="max-height: 100%; max-width: 100%; margin-top: 0px; background: #f2f2f2;"></a>
+					</div>
+				</div>
+			</div>
+		</section>
+<div class="container">
+		<div class="card" id="imgBx1">
+			<div class="imgBx" >
+				<img src="/static/image/create_acc.png">
+			</div>
+			<div class="contentbox">
+				<h2>For New Users</h2>
+				<p>First Register with us and fill your information.</p>
+				<a href="sf"><span>Create New Acount</span></a>
+			</div>
+		</div>
+		<div class="card" id="imgBx1">
+			<div class="imgBx" >
+				<img src="/static/image/search.png">
+			</div>
+			<div class="contentbox">
+				<h2>Search For Property</h2>
+				<p>We are providing search box where you can search your choice.</p>
+				<a href="#"><span>Click here to find your choice</span></a>
+			</div>
+		</div>
+		<div class="card" id="imgBx1">
+			<div class="imgBx" >
+				<img src="/static/image/manage.png">
+			</div>
+			<div class="contentbox">
+				<h2>Manage Booking</h2>
+				<p>You can book property then we will provide owner and location details for site visit.</p>
+				<a href="#"><span>Click here for booking</span></a>
+			</div>
+		</div>
+
+</div>
+<div class="gallery">
+		<div class="box">
+			<div class="imgbox">
+				<img src="/static/image/whyus.png">
+			</div>
+			<div class="write">
+				<div class="content">
+					<h2>&#x2714;  We Are Professional</h2>
+					<h2>&#x2714;  Best Service Guarantee</h2>
+				</div>
+			</div>
+		</div>
+			<div class="box"><div class="imgbox">
+				<img src="/static/image/whyus8.jpg">
+			</div>
+			<div class="write">
+				<div class="content">
+					<h2>&#x2714; Fast Response</h2>
+					<h2>&#x2714; Affordable Charges</h2>
+				</div>
+			</div></div>
+			<div class="box"><div class="imgbox">
+				<img src="/static/image/whyus3.jpg">
+			</div>
+			<div class="write">
+				<div class="content">
+					<h2>&#x2714; We Are Trusted and Secured</h2>
+					<h2>&#x2714; Online Support 24*7</h2>
+				</div>
+			</div></div>
+
+
+	</div>
+	<footer>
+<div class="foot">
+				<div class="left-col">
+					<a href="home"><img src="/static/image/logo6.png" alt="" id="logo"></a>
+					<div class="social">
+						<a href="#"><i class="fab fa-facebook-f"></i></a>
+						<a href="#"><i class="fab fa-instagram"></i></a>
+						<a href="#"><i class="fab fa-twitter"></i></a>
+						<a href="#"><i class="fab fa-linkedin"></i></a>
+					</div>
+					<p class="rightt">© COPYRIGHT. ALL RIGHTS RESERVED</p>
+				</div>
+				<div class="right-col">
+					<h1 style="font-family: monospace;">Our Newsletter</h1>
+					<div class="border">
+						<p style="color:#fff; font-family: monospace;"><br>Enter YOur E-mail to get our news and updaates.</p>
+						<form action="" class="news-form">
+							<br><br><br><input type="email" class="txt" placeholder="Enter Your Email" required>
+							<button type="submit" class="btn" onclick="clickk()">SUBMIT</button>
+						</form>
+					</div>
+				</div>
+			</div>  
+
+		</footer>
+</body>
+</html>

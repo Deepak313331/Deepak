@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/static/css/owner_add_room_css.css">
+	<link rel="stylesheet" type="text/css" href="/static/animate.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+	<!--<script type="text/javascript">
+		function click() {
+			// body...
+
+		}
+	</script>
+	<script>
+	function loadDoc() {
+	  var xhttp = new XMLHttpRequest();
+	  xhttp.onreadystatechange = function() {
+	    if (this.readyState == 4 && this.status == 200) {
+	      document.getElementById("demo").innerHTML = this.responseText;
+	    }
+  };
+  xhttp.open("GET", "ajax_info.txt", true);
+  xhttp.send();
+}
+</script>-->
+	<script type="text/javascript">
+
+		function showsubcat(a)
+		{
+
+		xmlhttp = new XMLHttpRequest();
+    	xmlhttp.onreadystatechange=function()
+    	{
+          document.getElementById("result").innerHTML = xmlhttp.responseText;
+    	}
+    	xmlhttp.open("GET","add_room_subcat?q="+a,true);
+    	xmlhttp.send();
+		}
+	</script>
+	<style>.insert{
+	width: 235px;
+	justify-content: center;
+	height: 50px;
+
+	border:1px solid tomato;
+	border-radius: 5px;
+	font-family: monospace;
+}
+.insert:hover{
+	color: #fff;
+	background: tomato;
+}</style>
+
+</head>
+<body>
+	<div class="animated " id="ani">
+	<div class="owner_main">
+		<a href="home"><img src="/static/image/logo7.png" width="100px;"></a><h1>WELCOME {{sesskey}} TO OWNER's DASHBOARD</h1>
+</div>
+<div class="container">
+		<a href="ownerD"><button class="btn"><i class="fas fa-home" aria-hidden="true">&nbsp;Home</i></button></a><br>
+		<a href="owner_add_room" id="add_room"><button class="btn" ><i class="fa fa-plus-circle" aria-hidden="true">&nbsp;Add Room</i></button></a><br>
+		<div class="add_content">
+			<form action="owner_add_room" method="post" enctype="multipart/form-data">
+				{% csrf_token %}
+			<table cellspacing="12">
+			<tr><td>
+				<h2 style="margin-top:-15px; margin-left:25px;">Add Room Details</h2>
+				<select value="" class="location" name="txtloc">
+					<option value="0">Select Location</option>
+					<option value="Palasia">Palasia</option>
+					<option value="Bhawarkua Vishnupuri">Bhawarkua Vishnupuri</option>
+					<option value="Bhawarkua Tower Chouraha">Bhawarkua Tower Chouraha</option>
+					<option value="Bhawarkua Gyanji Ka Dhaba">Bhawarkua Gyanji Ka Dhaba</option>
+					<option value="Bhawarkua Bholaram Gate">Bhawarkua Bholaram Gate</option>
+					<option value="Palasia Saket Square">Palasia Saket Square</option>
+					<option value="Tilak Nagar Main Road">Tilak Nagar Main Road </option>
+					<option value="M R 9, Hera Nagar Main Road">M R 9, Hera Nagar Main Road</option>
+					<option value="Napania">Napania</option>
+					<option value="Manish Baug Colony">Manish Baug Colony</option>
+					<option value="Rau Ram Rahim Colony">Rau Ram Rahim Colony</option>
+					<option value="VijayNagar SCHEME NO. 54">VijayNagar SCHEME NO. 54</option>
+					<option value="Vijay Nagar">Vijay Nagar</option>
+					<option value="Vijay Nagar Scheme No  171">Vijay Nagar Scheme No  171</option>
+					<option value="GPO Parsi mohalla">GPO Parsi mohalla</option>
+				</select>
+			</td></tr>
+				<tr><td>
+				<select onchange="showsubcat(this.value)" class="category" name="txtcat">
+					<option value="0">Select Category</option>
+					<option value="1">Room</option>
+					<option value="2">Flat</option>
+					<option value="3">Hostel</option>
+					<option value="4">PG</option>
+				</select>
+			</td></tr>
+			<tr><td>
+				<div id="result">
+				<select class="category" name="">
+					<option value="" >Select Sub Category</option>
+				</select></div>
+			</td></tr>
+			<tr><td>
+				<textarea rows="5" cols="30" placeholder="Enter Room Description" class="description" style="" name="txtarea"></textarea>
+			</td></tr>
+			<tr><td>
+				<input type="file" name="txtfile" value="" class="file">
+			</td></tr>
+			<tr><td>
+				<input type="text" name="txtprice" value="" class="text" placeholder="Enter Room Price">
+			</td></tr>
+			<tr><td>
+				<input type="text" name="txtfac" value="" class="text" placeholder="Enter Room Facility">
+			</td></tr>
+			<tr><td>
+				<button type="submit" class="insert" name="btnsub" style="width: 235px;justify-content: center;height: 50px;border:1px solid tomato;border-radius: 5px;font-family: monospace; margin-top:10px; margin-left:-0px;">Insert</button>
+			</td></tr>
+
+			</table>
+			</form>
+
+		</div>
+		<a href="owner_view_room"><button class="btn"><i class="fa fa-eye" aria-hidden="true">&nbsp;View Room</i></button></a><br>
+		<a href="view_booking_owner"><button class="btn"><i class="fa fa-book" aria-hidden="true">&nbsp;View Booking</i></button></a><br>
+		<a href="owner_logout"><button class="btn"><i class="fas fa-sign-out-alt"></i>&nbsp;LogOut</button></a>
+</div>
+</div>
+</body>
+</html>

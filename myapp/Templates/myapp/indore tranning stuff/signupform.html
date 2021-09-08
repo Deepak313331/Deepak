@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="signupform_css.css">
+	<link rel="stylesheet" type="text/css" href="animate.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+			<script>
+				function myFunction() {
+					  var x = document.getElementById("username");
+					  x.value = x.value.toUpperCase();
+					}
+
+				function checkPassword() { 
+					password1 = document.getElementById("pass1").value;
+					password2 = document.getElementById("pass2").value;
+
+                if (password1 == '') 
+                    alert ("Please enter Password"); 
+                
+                else if (password2 == '') 
+                    alert ("Please enter confirm password"); 
+                      
+                else if (password1 != password2) { 
+                    alert ("\nPassword did not match!!") ;
+                    return false; 
+                } 
+            } 
+		</script>
+</head>
+<body>
+	<a href="indexb.html" class="bbtn">
+			<i class="fa fa-arrow-left" aria-hidden="true"></i>
+	</a>
+	<div class="title"><h1 class="animated fadeInUp">SignUp Form</h1></div>
+	
+
+					<center><form>
+                       <table cellspacing="15">
+                       	<tr>
+                       		<td><div class="add1"><i class="fa fa-address-book" aria-hidden="true"></i></div></td>
+                       		<td><div class="add">
+						        <input type="text" name="" placeholder="Enter Your Full Name" required="" id="username" onkeyup="myFunction()">
+					            </div>
+					        </td>
+					    </tr>
+					 	<tr>
+                       		<td><div class="add1"><i class="fa fa-envelope" aria-hidden="true"></i></div></td>
+                       		<td><div class="add">
+						        <input type="text" name="" placeholder="Enter Email-Id" required="">
+					            </div>
+					        </td>
+					    </tr>
+						<tr>
+                       		<td><div class="add1"><i class="fa fa-phone" aria-hidden="true"></i></div></td>
+                       		<td><div class="add">
+						        <input type="text" name="" placeholder="Enter Your Mobile No." required="">
+					            </div>
+					        </td>
+					    </tr>
+						<tr>
+                       		<td><div class="add1"><i class="fa fa-key" aria-hidden="true"></i></div></td>
+                       		<td><div class="add">
+						        <input type="password" name="" placeholder="Enter Password"  id="pass1">
+					            </div>
+					        </td>
+					    </tr>
+						<tr>
+                       		<td><div class="add1"><i class="fa fa-key" aria-hidden="true"></i></div></td>
+                       		<td><div class="add">
+						        <input type="password" name="" placeholder="Confirm Password"  id="pass2" >
+					            </div>
+					        </td>
+					    </tr>
+						<tr>
+                       		<td><div class="add1"><i class="fa fa-address-card" aria-hidden="true"></i></div></td>
+                       		<td><div class="add5">
+						        <textarea rows="5" cols="30"></textarea>
+					            </div>
+					        </td>
+					    </tr>
+						<tr><td><div class="gen"><p>Gender:</p><select>
+							<option>Male</option>
+							<option>Fe-Male</option>
+							<option>Other</option>
+						</select></div></td>
+						<td style="visibility: hidden;">asc</td>
+						<td><div class="look"><p>Looking For:</p><select>
+							<option>Flat</option>
+							<option>PG's</option>
+							<option>Room</option>
+							<option>House</option>
+						</select></div></td></tr>
+						<tr><td style="visibility: hidden;">asc</td><td><input type="submit" name="" onmouseover="checkPassword()"></td></tr>
+					</table>
+					</form></center>
+			
+</body>
+</html>

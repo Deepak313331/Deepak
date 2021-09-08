@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/static/css/view_room_owner_css.css">
+	<link rel="stylesheet" type="text/css" href="/static/animate.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+	<!--<script type="text/javascript">
+		function click() {
+			// body...
+
+		}
+	</script>
+	<script>
+	function loadDoc() {
+	  var xhttp = new XMLHttpRequest();
+	  xhttp.onreadystatechange = function() {
+	    if (this.readyState == 4 && this.status == 200) {
+	      document.getElementById("demo").innerHTML = this.responseText;
+	    }
+  };
+  xhttp.open("GET", "ajax_info.txt", true);
+  xhttp.send();
+}
+</script>-->
+
+</head>
+<body>
+	<div class="animated " id="ani">
+	<div class="owner_main">
+		<a href="home"><img src="/static/image/logo7.png" width="100px;"></a><h1>WELCOME {{sesskey}} TO OWNER's DASHBOARD</h1>
+	</div>
+	<div class="container">
+		<a href="ownerD"><button class="btn"><i class="fas fa-home" aria-hidden="true">&nbsp;Home</i></button></a><br>
+		<a href="owner_add_room"><button class="btn" ><i class="fa fa-plus-circle" aria-hidden="true">&nbsp;Add Room</i></button></a><br>
+			<a href="owner_view_room"><button class="btn"><i class="fa fa-eye" aria-hidden="true">&nbsp;View Room</i></button></a><br>
+		<div class="add_content" >
+			<table border="1" id="data" class="scrolldown">
+				<tbody>
+				<tr><th>OWNER_ID(PK)</th><th>OWNER_LOCATION</th><th>OWNER_CATEGORY</th><th>OWNER_SUB_CATEGORY</th><th>ROOM_DESCRIPTION</th><th width="70">OWNER_ROOM_IMAGE</th><th>ROOM_PRICE</th><th>ROOM_FACILITIES</th><th>DELETE_RECORD</th></tr>
+				{% for items in view_room_res %}
+        			<tr><td width="10">{{items.id}}</td><td>{{items.location}}</td><td>{{items.category}}</td><td>{{items.sub_category}}</td><td width="70">{{items.description}}</td><td><img src="{{items.file_upload}}" width="120"height="100"></td><td>{{items.room_price}}</td><td>{{items.room_facility}}</td><td><a href="delete_owner_add_room?q={{items.id}}">DELETE</a></td></tr>
+        		{% endfor %}
+				</tbody>
+			</table>
+		</div>
+		<a href="view_booking_owner"><button class="btn"><i class="fa fa-book" aria-hidden="true">&nbsp;View Booking</i></button></a><br>
+		<a href="owner_logout"><button class="btn"><i class="fas fa-sign-out-alt"></i>&nbsp;LogOut</button></a>
+</div>
+</div>
+</body>
+</html>

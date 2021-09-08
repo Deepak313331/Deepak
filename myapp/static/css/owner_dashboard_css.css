@@ -1,0 +1,33 @@
+body{
+	background: #d9ffb3;
+	font-family: monospace;
+	color: #cccccc;
+}
+.owner_main h1{
+	font-size: 40px;
+	color: tomato;
+	margin-left: 350px;
+	margin-top: -70px;
+}
+button{
+	border-radius: 100px;
+	width: 70px;
+	border-left: 0;
+	border-top: 3px solid #cccccc;
+	border-right: 0;
+	border-bottom: 3px solid #cccccc;
+	height: 50px;
+	color: #838383;
+	font-weight: bold;
+	background: #d9ffb3;
+	margin-top: 30px;
+	margin-left: 20px;
+}
+.btn:hover{
+	background:  #fff;
+	transition: 0.5s;
+	color: tomato;
+}
+#ani{
+	animation-delay: 0.5s;
+}

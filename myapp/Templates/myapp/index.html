@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+    function showdata(a)
+    {
+    	xmlhttp = new XMLHttpRequest();
+    	xmlhttp.onreadystatechange=function()
+    	{
+          document.getElementById("res").innerHTML = xmlhttp.responseText;
+
+    	}
+
+    	xmlhttp.open("GET","search?q="+a,true);
+    	xmlhttp.send();
+    }
+
+
+	</script>
+</head>
+<body>
+<input type="text" name="txtsearch" onkeyup="(this.value)"  style="width:400px;height:30px;"/>
+
+<div id="res"></div>
+
+</body>
+</html>

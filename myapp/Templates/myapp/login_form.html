@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="/static/css/login_form_css.css">
+	<link rel="shortcut icon"  type="image/png" href="/static/image/logo3.png">
+	<link rel="stylesheet" type="text/css" href="/static/animate.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+</head>
+<body>
+
+	<div class="back">
+		<img src="/static/image/bgimg2.jpg">
+		<a href="home" class="bbtn">
+			<i class="fa fa-arrow-left" aria-hidden="true"></i>
+		</a><a href="sf" style="color:#ffdd99; margin-left:470px;font-size:15px;text-decoration: none;;">NEW USER REGISTER HERE</a>
+	</div>
+	<form class="box" action="" method="post">
+		{% csrf_token %}
+		<h1 class="animated shake">Login</h1>
+		<input type="text" name="txtname" placeholder="Enter Full Name" required>
+		<input type="Password" name="txtpassword" placeholder="Enter Your Password"required>
+		<input type="submit" name="" value="login">
+	</form>{{msg}}
+
+
+</body>
+</html>

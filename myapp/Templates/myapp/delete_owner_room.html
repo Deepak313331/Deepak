@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<h1>Are you sure to delete this record ?</h1>
+<form action="" method="post">
+{% csrf_token %}
+<table>
+	<input type="hidden" name="txtid" value="{{res.id}}" />
+	<tr><td>LOCATION</td><td>{{res.location}}</td></tr>
+	<tr><td>CATEGORY</td><td>{{res.category}}</td></tr>
+	<tr><td>SUB_CATEGORY</td><td>{{res.sub_category}}</td></tr>
+	<tr><td>ROOM_DESCRIPTION</td><td>{{res.description}}</td></tr>
+	<tr><td>ROOM_IMAGE</td><td>{{res.file_upload}}</td></tr>
+	<tr><td>ROOM_PRICE</td><td>{{res.room_price}}</td></tr>
+	<tr><td>ROOM_FACILITY</td><td>{{res.room_facility}}</td></tr>
+    <tr><td><input type="submit" name="btndelete" value="Delete"/></td><td><a href="owner_view_room">Cancel</a></td></tr>
+
+</table>
+
+
+</form>
+</body>
+</html>

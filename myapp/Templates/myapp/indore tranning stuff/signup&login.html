@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+	</title>
+	<link rel="stylesheet" type="text/css" href="signup&login_css.css"><link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+	<link rel="stylesheet" type="text/css" href="animate.css">
+</head>
+<body><div class="animated fadeInDown " id="ani">
+	<div class="container">
+		<div class="formB">
+			<div class="buttonB">
+				<div id="btnn"></div>
+				<button type="button" class="btn" onclick="login()">Login</button>
+				<button type="button" class="btn" onclick="register()">Register</button>	
+				</div>
+				
+					<form class="field" id="login" method="post">
+						<input type="text" name="" class="if" placeholder="User Id" required="" style="color: #ffcc80;">
+						<input type="Password" name="" class="if" placeholder="Enter Password" required="">
+						<input type="checkbox" name="" class="checkB"><span>Remember Password</span>
+						<button type="submit" class="sub" onclick="window.location.href='owner_dashboard.html'">Login</button>
+						
+					</form>
+					<form class="field" id="register" method="post">
+					<div class="social">
+						<a href="#"><i class="fab fa-facebook-f"></i></a>
+						<a href="#"><i class="fab fa-twitter"></i></a>
+						<a href="#"><i class="fab fa-instagram"></i></a>
+					</div>
+						<input type="text" name="" class="if" placeholder="User Id" required="">
+						<input type="text" name="" class="if" placeholder="Enter Name" required="">
+						<input type="text" name="" class="if" placeholder="Enter Email-Id" required="">
+						<input type="Password" name="" class="if" placeholder="Enter Password" required="">
+						<input type="text" name="" class="if" placeholder="Enter Phone No." required="">
+						<input type="checkbox" name="" class="checkB"><span>I agree to terms and conditions.</span>
+						<button type="submit" class="sub" >Register</button>
+					</form>
+		</div>
+	</div>
+	<script>
+		
+		var x = document.getElementById("login");
+		var y = document.getElementById("register");
+		var z = document.getElementById("btnn");
+
+		function register() {
+	
+			x.style.left = "-400px";
+			y.style.left = "10px";
+			z.style.left = "110px";
+		}
+		
+		function login() {
+	
+			x.style.left = "10px";
+			y.style.left = "450px";
+			z.style.left = "0";
+		}
+
+	</script>
+</div>
+</body>
+</html>

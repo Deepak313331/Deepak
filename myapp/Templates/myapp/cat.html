@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<script type="text/javascript">
+		function showsubcat(a)
+		{
+
+		xmlhttp = new XMLHttpRequest();
+    	xmlhttp.onreadystatechange=function()
+    	{
+          document.getElementById("res").innerHTML = xmlhttp.responseText;
+
+    	}
+
+    	xmlhttp.open("GET","subcat?q="+a,true);
+    	xmlhttp.send();
+		}
+
+
+	</script>
+</head>
+<body>
+
+
+<div class="col-12 col-sm-6">
+    <div class="input-group2" id="TS2">
+        <select onchange="showsubcat(this.value)">
+            <option value="">Select Category</option>
+            {% for s in cat_res %}
+            <option value="{{s.cat_id}}">{{s.cat_name}}</option>
+            {% endfor %}
+
+        </select>
+    </div>
+</div>
+
+
+</select>
+
+<br><br>
+<div id="res">
+	<select>
+		<option value="">Select SubCategory</option>
+
+	</select>
+
+</div>
+</body>
+</html>

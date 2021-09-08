@@ -1,0 +1,122 @@
+*{
+	margin:0;
+	padding: 0;
+	font-family: sans-serif;
+
+}
+#ani{
+	background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(img16.jpg);
+	background-position: absolute;
+	background-size: cover;
+	height: 600px;
+	animation-duration: 2s;
+
+}
+.container{
+	height: 100%;
+	width: 100%;
+}
+.formB{
+	width: 380px;
+	overflow: hidden;
+	height: 600px;
+	position: relative;
+	margin: 6px auto;
+	margin-top: 15px;
+	padding: 5px;
+	border-radius: 50px;
+	
+}
+.buttonB{
+	width: 220px;
+	margin: 35px auto;
+	position: relative;
+	box-shadow: 0 0 20px 9px #ffcc80;
+	border-radius: 30px;
+}
+.btn{
+	padding: 10px 30px;
+	cursor: pointer;
+	background: transparent;
+	border:0;
+	outline: none;
+	position: relative;
+}
+#btnn{
+	top: 0;
+	left:0;
+	position: absolute;
+	width: 110px;
+	height: 100%;
+	background: linear-gradient(to right, #004d80,  #ffcc80);
+	border-radius: 30px;
+	transition: .5s;
+}
+.sub:hover{
+	opacity: 0.7;
+}
+.social{
+	text-align: center;
+}
+.social i{
+	width: 30px;
+	color: #004d80;	
+	margin-left: 70px;
+	bottom:  50%;
+	box-shadow: 0 0 20px 0 #7f7f7f3d;
+	cursor: pointer;
+}
+.social i:hover{
+	color:#ffcc80;
+}
+.field{
+	top: 180px;
+	position: absolute;
+	width: 280px;
+	transition: .5s;
+
+}
+.if{
+	width: 130%;
+	font-weight: 100;
+	padding: 10px 0;
+	margin: 5px 0;
+	color: #ffcc80;
+	border-right: 0;
+	border-left: 0;
+	border-top: 0;
+	border-bottom: 1px solid #999;
+	outline: none;
+	background: transparent;
+}
+::placeholder{
+	color: #fff;
+}
+.sub{
+	width: 85%;
+	padding: 10px 30px;
+	cursor: pointer;
+	display: block;
+	margin-left: 60px;
+	background: linear-gradient(to right, #004d80,  #ffcc80);
+	border:0;
+	outline: none;
+	border-radius: 30px;
+}
+.checkB{
+	margin: 30px 10px 30px 0;
+
+
+}
+span{
+	color: #fff;
+	font-size: 10px;
+	bottom: 68px;
+	position: absolute;
+}
+#login{
+	left:10px;
+}
+#register{
+	left: 460px;
+}

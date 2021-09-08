@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/static/css/signupform_css.css">
+	<link rel="stylesheet" type="text/css" href="/static/animate.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+			<script type="text/javascript">
+				function myFunction() {
+					  var x = document.getElementById("username");
+					  x.value = x.value.toUpperCase();
+					}
+
+				function checkPassword() { 
+					password1 = document.getElementById("pass1").value;
+					password2 = document.getElementById("pass2").value;
+
+                if (password1 == '') 
+                    alert ("Please enter Password"); 
+                
+                else if (password2 == '') 
+                    alert ("Please enter confirm password"); 
+                      
+                else if (password1 != password2) { 
+                    document.getElementById("sp").innerHTML="Password didn't Match";
+                    return false; }
+       
+            }
+
+		 function checkemail(a)
+		 {
+             xm = new XMLHttpRequest();
+             xm.onreadystatechange=function()
+             {
+                document.getElementById("res").innerHTML = xm.responseText;
+             }
+             xm.open("GET","user_check_email?q="+a,true);
+             xm.send();
+		 }
+
+
+
+	</script>
+
+</head>
+<body>
+	<a href="home" class="bbtn">
+			<i class="fa fa-arrow-left" aria-hidden="true"></i>
+	</a>
+	<div class="title"><h1 class="animated fadeInUp">SignUp Form</h1></div>
+	
+
+					<center><form action="" method="post">
+						{%  csrf_token %}
+                       <table cellspacing="15">
+                       	<tr>
+                       		<td><div class="add1"><i class="fa fa-address-book" aria-hidden="true"></i></div></td>
+                       		<td><div class="add">
+						        <input type="text" name="name" placeholder="Enter Your Full Name" required="" id="username" onkeyup="myFunction()">
+					            </div>
+					        </td>
+					    </tr>
+					 	<tr>
+                       		<td><div class="add1"><i class="fa fa-envelope" aria-hidden="true"></i></div></td>
+                       		<td><div class="add" >
+						        <input type="text" name="email" placeholder="Enter Email-Id" required="" onkeyup="checkemail(this.value)">
+								<span id="res"></span>
+					            </div>
+					        </td>
+					    </tr>
+						<tr>
+                       		<td><div class="add1"><i class="fa fa-phone" aria-hidden="true"></i></div></td>
+                       		<td><div class="add">
+						        <input type="text" name="phone" placeholder="Enter Your Mobile No." required="">
+					            </div>
+					        </td>
+					    </tr>
+						<tr>
+                       		<td><div class="add1"><i class="fa fa-key" aria-hidden="true"></i></div></td>
+                       		<td><div class="add">
+						        <input type="password" name="pas" placeholder="Enter Password"  id="pass1">
+					            </div>
+					        </td>
+					    </tr>
+						<tr>
+                       		<td><div class="add1"><i class="fa fa-key" aria-hidden="true"></i></div></td>
+                       		<td><div class="add">
+						        <input type="password" name="txtcnf" placeholder="Confirm Password"  id="pass2" onkeyup="check_pass(this.value)"><br><span id="sp"style="color:Red; font-size: 20px;"></span>
+					        	<span id="sp"></span>
+							</div>
+					        </td>
+					    </tr>
+						<tr>
+                       		<td><div class="add1"><i class="fa fa-address-card" aria-hidden="true"></i></div></td>
+                       		<td><div class="add5">
+									<textarea rows="5" cols="30" name="add"></textarea>
+					            </div>
+					        </td>
+					    </tr>
+						<tr><td><div class="gen"><p>Gender:</p>
+							<select name="gen">
+							<option>Male</option>
+							<option>Fe-Male</option>
+							<option>Other</option>
+							</select>
+						</div></td>
+						<td style="visibility: hidden;">asc</td>
+						<td><div class="look"><p style="color:#000;">Looking For:</p><select name="lookk">
+							<option>Flat</option>
+							<option>PG's</option>
+							<option>Room</option>
+							<option>House</option>
+						</select></div></td></tr>
+						<tr><td style="visibility: hidden;">asc</td><td><input type="submit" name="btn" onmouseover="checkPassword()"></td></tr>
+					</table>
+					</form>{{msg}}</center>
+
+</body>
+</html>

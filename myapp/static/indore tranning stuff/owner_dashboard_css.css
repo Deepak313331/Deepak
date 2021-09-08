@@ -1,0 +1,29 @@
+body{
+	background: #d9ffb3;
+	font-family: monospace;
+	color: #cccccc;
+}
+h1{
+	font-size: 50px;
+	color: #808080;
+}
+button{
+	border-radius: 8px;
+	width: 150px;
+	border-left: 0;
+	border-top: 3px solid #cccccc;
+	border-right: 0;
+	border-bottom: 3px solid #cccccc;
+	height: 50px;
+	color: #838383;
+	font-weight: bold;
+	background: #d9ffb3;
+	margin-top: 150px;
+}
+.btn:hover{
+	background:  #fff;
+	transition: 0.5s;
+}
+#ani{
+	animation-delay: 0.5s;
+}

@@ -1,0 +1,19 @@
+<select style="
+    font-size: 14px;
+    font-weight: 600;
+    height:35px;
+    width:150px;
+    border:0 ;
+    margin: 0;
+    padding: 0;
+    color: #41485a;" name="txtsubcat">
+
+{% for s in sub_res %}
+
+<option value="{{s.sub_cat_id}}" style="border-radius:15px;">{{s.sub_cat_name}}</option>
+
+
+{% endfor %}
+
+
+</select>
